@@ -22,4 +22,6 @@ Rails.application.routes.draw do
 
   get '/:slug' => 'links#redirect'
 
+  resource :visits
+
 end
