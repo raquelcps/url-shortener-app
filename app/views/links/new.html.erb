@@ -1,0 +1,26 @@
+<h1>Add new link</h1>
+<!-- Form Validation -->
+<% if @link.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@link.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+    <ul>
+    <% @link.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+<!-- End Form Validation -->
+
+<%= form_tag links_path do %> 
+
+<%= label_tag :slug %>
+<%= text_field_tag :slug %>
+
+<%= label_tag :target_url %>
+<%= text_field_tag :target_url %>
+
+<%= submit_tag 'Add Link' %>
+
+<% end %>
